@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+.main_page_wrapper {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  color: #000;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #030407, #091832f9 49.99%, #030407);
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 1200px;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  animation: drop 8s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+  left: 0;
+}
+.line:nth-child(2) {
+  left: 25%;
+}
+.line:nth-child(3) {
+  left: 50%;
+}
+.line:nth-child(4) {
+  left: 75%;
+}
+
+.line:nth-child(5) {
+  left: 100%;
+}
+
+.line:nth-child(1)::after {
+  animation-delay: 1s;
+}
+.line:nth-child(4)::after {
+  animation-delay: 2s;
+}
+.line:nth-child(5)::after {
+  animation-delay: 1.5s;
+}
+
+.line:nth-child(3)::after {
+  animation-delay: 2.5s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+.main_page_text {
+  position: relative;
+  z-index: 111;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 18%;
+}
+.main_page_text p {
+  color: #fff;
+  font-size: 25px;
+  width: 550px;
+  font-weight: 300;
+}
+.main_page_text h1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 50px;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  height: 55px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: #31bedf;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+
+.cta span {
+  color: #fff;
+  position: relative;
+  font-size: 20px;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #31bedf;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.96);
+}
+
+.header_button {
+  margin-top: 50px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+.header_btn {
+  width: 120px;
+}
